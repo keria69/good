@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
+    <title>诛仙世界角色藏品阁</title>
+    <link rel="stylesheet" href="styles.css?v=desktop-lock-artscale-20260522-1" />
+  </head>
+  <body class="has-cover" data-theme="ice">
+    <section class="cover-screen" id="coverScreen" aria-label="莱茵封面">
+      <img id="coverImage" class="cover-image" src="assets/rhein-cover-archive.png" alt="莱茵档案封面" />
+      <div class="cover-shade"></div>
+      <button class="cover-nav cover-nav-prev" id="coverPrev" type="button" aria-label="上一张封面">
+        <span aria-hidden="true">‹</span>
+      </button>
+      <button class="cover-nav cover-nav-next" id="coverNext" type="button" aria-label="下一张封面">
+        <span aria-hidden="true">›</span>
+      </button>
+      <button class="music-toggle" id="musicToggle" type="button" aria-label="播放背景音乐">
+        <span aria-hidden="true">♪</span>
+      </button>
+      <audio id="coverMusic" src="assets/audio/all-too-well.mp3" autoplay loop preload="auto" playsinline webkit-playsinline></audio>
+      <div class="cover-entry">
+        <button class="enter-button" id="enterButton" type="button">
+          <span>进入展示</span>
+        </button>
+      </div>
+    </section>
+
+    <button class="cover-return" id="coverReturn" type="button" aria-label="返回封面页">
+      <span aria-hidden="true">←</span>
+      <strong>封面</strong>
+    </button>
+
+    <aside class="archive-nav" aria-label="档案导航">
+      <div class="archive-brand">
+        <strong>RHEIN</strong>
+        <span>ETERNITY SERIES</span>
+      </div>
+      <nav>
+        <a href="#appShell"><b>01</b><span>HOME<br />主页</span></a>
+        <a href="#collectionSection" data-section="collection"><b>02</b><span>ARCHIVE<br />档案</span></a>
+        <a href="#appShell" class="active"><b>03</b><span>CHARACTER<br />角色</span></a>
+        <a href="#collectionSection"><b>04</b><span>GALLERY<br />图集</span></a>
+        <a href="#petsSection" data-section="pets"><b>05</b><span>ABOUT<br />关于</span></a>
+      </nav>
+      <p>THE LIGHT THAT<br />CONNECTS ALL ETERNITY</p>
+    </aside>
+
+    <main class="shell app-shell" id="appShell">
+      <section class="hero" aria-label="角色总览">
+        <img class="hero-logo-art" src="assets/rhein-logo-ice-transparent.png" alt="" aria-hidden="true" />
+        <div class="hero-code" aria-hidden="true">
+          <span>CHARACTER NO.</span>
+          <strong>LA-03</strong>
+          <i></i>
+        </div>
+        <div class="hero-copy">
+          <div class="profile-head">
+            <div class="name-row">
+              <h1>茵啾啾</h1>
+            </div>
+            <p class="role-line">
+              <img src="assets/lingxi-icon-custom.png" alt="" />
+              <span>灵汐阁 · 70级</span>
+            </p>
+          </div>
+          <div class="motto-card">
+            <p>愿以微光入长夜，照见心中山海。</p>
+          </div>
+          <dl class="character-meta">
+            <div><dt>称号</dt><dd>举世无双</dd></div>
+            <div><dt>生日</dt><dd>7月26日</dd></div>
+            <div><dt>帮派</dt><dd>闲庭</dd></div>
+            <div><dt>阵营</dt><dd>逍遥</dd></div>
+          </dl>
+        </div>
+
+        <div class="character-panel" aria-label="角色信息">
+          <div class="character-scene">
+            <img class="hero-bg" src="assets/xianxia-hero-bg-rhine.png" alt="" />
+            <img
+              id="characterImage"
+              class="character-image"
+              src="assets/rhein-character-final-cutout.png"
+              alt="诛仙世界角色截图"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section class="stats-band" aria-label="内容导航">
+        <button class="stat-tab active" type="button" data-section="collection">
+          <span>COLLECTIONS</span>
+          <em>时装总览</em>
+          <strong id="fashionCount">0</strong>
+          <i aria-hidden="true"></i>
+        </button>
+        <button class="stat-tab" type="button" data-section="moments">
+          <span>MEMORIES</span>
+          <em>朋友圈</em>
+          <strong id="momentsCount">0</strong>
+          <i aria-hidden="true"></i>
+        </button>
+        <button class="stat-tab" type="button" data-section="pets">
+          <span>COMPANIONS</span>
+          <em>宠物</em>
+          <strong>0</strong>
+          <i aria-hidden="true"></i>
+        </button>
+      </section>
+
+      <section class="moments-section content-section" id="momentsSection" aria-label="朋友圈">
+        <div class="moments-header">
+          <div class="moment-mode-tabs" aria-label="朋友圈视图">
+            <button class="moment-mode-tab active" type="button" data-moment-view="feed">动态</button>
+            <button class="moment-mode-tab" type="button" data-moment-view="favorites">收藏</button>
+          </div>
+          <label class="photo-picker">
+            <input id="momentPhoto" type="file" accept="image/*" multiple />
+            <span>上传照片</span>
+          </label>
+        </div>
+
+        <form class="moment-composer" id="momentForm">
+          <div class="composer-preview" id="composerPreview">
+            <span>照片预览</span>
+          </div>
+          <div class="composer-fields">
+            <textarea id="momentText" rows="4" placeholder="写一条莱茵今天的动态..."></textarea>
+            <div class="composer-actions">
+              <button type="submit">发布动态</button>
+            </div>
+          </div>
+        </form>
+
+        <div class="moments-feed" id="momentsFeed"></div>
+        <div class="favorite-wall" id="favoriteWall" hidden></div>
+      </section>
+
+      <section class="workspace content-section active" id="collectionSection">
+        <aside class="sidebar" aria-label="筛选">
+          <label class="search-box">
+            <span>搜索藏品</span>
+            <input id="searchInput" type="search" placeholder="输入名称、部位、标签" />
+          </label>
+          <div class="filter-group" id="typeFilters" aria-label="类型筛选"></div>
+        </aside>
+
+        <section class="collection-view" aria-label="藏品列表">
+          <div class="view-header">
+            <div></div>
+            <div class="sort-control">
+              <label for="sortSelect">排序</label>
+              <select id="sortSelect">
+                <option value="rarity">稀有度</option>
+                <option value="favorite">我的最爱</option>
+              </select>
+            </div>
+          </div>
+          <div class="fashion-gallery" id="fashionGallery"></div>
+          <div class="item-grid" id="itemGrid"></div>
+          <p class="empty-state" id="emptyState">没有找到符合条件的藏品。</p>
+        </section>
+      </section>
+
+      <section class="pets-section content-section" id="petsSection" aria-label="宠物">
+        <div>
+          <p class="eyebrow">Pets</p>
+          <h2>莱茵宠物</h2>
+          <p>宠物系统正在开发中..</p>
+        </div>
+      </section>
+    </main>
+
+    <dialog class="detail-dialog" id="detailDialog">
+      <button class="close-button" id="closeDialog" type="button" aria-label="关闭">×</button>
+      <div class="dialog-body" id="dialogBody"></div>
+    </dialog>
+
+    <dialog class="photo-dialog" id="photoDialog">
+      <button class="photo-close" id="closePhotoDialog" type="button" aria-label="关闭图片预览">×</button>
+      <img id="photoDialogImage" alt="放大的朋友圈照片" />
+    </dialog>
+
+    <aside class="like-widget" aria-label="点赞">
+      <button class="like-button" id="likeButton" type="button" aria-label="给莱茵点赞">
+        <span class="heart-icon" aria-hidden="true">♡</span>
+      </button>
+      <strong id="likeCount">0</strong>
+    </aside>
+
+    <script>
+      (() => {
+        const music = document.querySelector("#coverMusic");
+        if (!music) return;
+        window._hasEntered = false;
+
+        music.autoplay = true;
+        music.loop = true;
+        music.preload = "auto";
+        music.setAttribute("playsinline", "");
+        music.setAttribute("webkit-playsinline", "");
+
+        const tryPlay = () => {
+          if (window._hasEntered || !document.body.classList.contains("has-cover")) return;
+          const playAttempt = music.play();
+          if (playAttempt && typeof playAttempt.catch === "function") {
+            playAttempt.catch(() => {});
+          }
+        };
+
+        const unlockPlayback = () => {
+          if (window._hasEntered || !document.body.classList.contains("has-cover")) return;
+          music.muted = false;
+          tryPlay();
+        };
+
+        const schedulePlay = () => window.requestAnimationFrame(tryPlay);
+        if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", schedulePlay, { once: true });
+        } else {
+          schedulePlay();
+        }
+
+        window.addEventListener("pageshow", tryPlay);
+        document.addEventListener("visibilitychange", () => {
+          if (!document.hidden) tryPlay();
+        });
+
+        ["pointerdown", "touchstart", "click", "keydown"].forEach((eventName) => {
+          document.addEventListener(eventName, unlockPlayback, { once: true, passive: true });
+        });
+
+        document.querySelector("#enterButton")?.addEventListener("click", () => {
+          window._hasEntered = true;
+          music.autoplay = false;
+          music.muted = true;
+          music.pause();
+          music.currentTime = 0;
+          music.removeAttribute("autoplay");
+        });
+      })();
+    </script>
+    <script src="app.js?v=entry-mobile-fixes-20260522-1"></script>
+  </body>
+</html>
